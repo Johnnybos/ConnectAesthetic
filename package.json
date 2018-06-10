@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/asaadkhattab/ConnectAesthetic#readme",
   "dependencies": {
-    "hapi": "17.5.1"
+    "ejs": "2.6.1",
+    "hapi": "17.5.1",
+    "http": "0.0.0",
+    "inert": "5.1.0",
+    "vision": "5.3.3"
   }
 }
