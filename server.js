@@ -1,16 +1,19 @@
-const http = require('http');
-const hapi = require("hapi");
-const server = new hapi.Server();
+'use strict';
+
+const Hapi=require('hapi');
+
+// Create a server with a host and port
+const server = new Hapi.Server();
 
 server.connection({port:3000});
 
-server.start(console.log("Hello World"));
+server.start(console.log('test'));
 
 server.route({
   method: "GET",
   path: "/",
   handler: function(request, reply){
-    reply.view("Test");
+    reply("welcome to node connect");
   }
 })
 
@@ -22,18 +25,4 @@ server.register(require("vision"), function(err){
     relativeTo: __dirname,
     path: "views"
   })
-});
-
-server.register(require("inert"), function(err){
-
-});
-
-server.route({
-  method: "GET",
-  path: "/{param}",
-  handler: {
-    directory: {
-      path: "public"
-    }
-  }
 });

@@ -1,26 +1,21 @@
 {
-  "name": "connectaesthetic",
+  "name": "node_connect_app",
   "version": "1.0.0",
-  "description": "Social Network App ",
+  "description": "social network",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/asaadkhattab/ConnectAesthetic.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/asaadkhattab/ConnectAesthetic/issues"
-  },
-  "homepage": "https://github.com/asaadkhattab/ConnectAesthetic#readme",
   "dependencies": {
-    "ejs": "2.6.1",
-    "hapi": "17.5.1",
-    "http": "0.0.0",
-    "inert": "5.1.0",
-    "vision": "5.3.3"
+    "ejs": "^2.4.2",
+    "hapi": "13.4.1",
+    "hapi-auth-cookie": "^6.1.1",
+    "inert": "^4.0.0",
+    "mongoose": "^4.5.10",
+    "shortid": "^2.2.6",
+    "socket.io": "^1.4.8",
+    "vision": "^4.1.0"
   }
 }
