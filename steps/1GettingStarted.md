@@ -1,11 +1,12 @@
 # Getting Started!
-#Open the terminal and Run the following:
-###npm init
-###npm install hapi@13.4.1
-###npm install ejs
-###npm install vision
-###npm install inert
-#Add the Server and Routes
+## Open the terminal and Run the following:
+### npm init
+### npm install hapi@13.4.1
+### npm install ejs
+### npm install vision
+### npm install inert
+# Add the Server and Routes
+
 'use strict';
 
 const Hapi=require('hapi');
