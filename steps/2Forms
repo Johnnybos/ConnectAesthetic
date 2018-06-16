@@ -1,17 +1,27 @@
-#Database
+# Connecting to Mongo Database
+
 We need a database to store users and their
 email, password, id, friends, friend requests,
 interest and picture.
 
-#npm install mongoose
+```
+npm install mongoose --save
+```
+Open a new tab terminal to view Mongod
+Open the shell to open a database
+Let's call our database -> connectdb
+Type '  use connectdb  ' in the terminal
 
-#Mongo
-##Open a new tab terminal and run mongoose
-##Open another tab and Run "mongo"
-##Type " use connect "
-## npm install shortid
 
-## Require mongoose and shortid
+Make a folder called 'models' and add
+user_model.js
+
+To identify users:
+```
+npm install shortid
+```
+
+## Require the modules: mongoose and shortid
 const mongoose = require("mongoose");
 const shortid = require("shortid");
 

@@ -48,3 +48,12 @@ server.route({
     }
   }
 });
+
+//Register Plug-in to Server.
+server.register({
+  register: require("./routes/user")
+}, function(err){
+  if (err) {
+    return;
+  }
+});
