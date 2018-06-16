@@ -1,0 +1,9 @@
+
+
+#npm install mongoose
+
+#Mongo
+##Open a new tab terminal and run mongoose
+##Open another tab and Run "mongo"
+##Type " use connect "
+## npm install shortid
