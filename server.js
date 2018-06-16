@@ -7,7 +7,7 @@ const server = new Hapi.Server();
 
 const mongoose = require("mongoose");
 const User = require("./models/user_model");
-const connect = mongoose.connect("mongodb://localhost/connect");
+const connect = mongoose.connect("mongodb://localhost/connectdb");
 //Port
 server.connection({port:8080});
 
@@ -38,6 +38,14 @@ server.register(require("vision"), function(err){
 server.register(require("inert"), function(err){
 
 });
+
+//Register Cookie using Hapi Auth
+server.register(require("hapi-auth-cookie"));
+server.auth.strategy("strategy", "cookie", {
+  cookie "cookie",
+  password: "CnqKELu9u4Ru*bnmpAQBzYr^P^k9t_jg",
+  isSecure: false
+})
 
 server.route({
   method: "GET",

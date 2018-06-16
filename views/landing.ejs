@@ -32,6 +32,23 @@
         data: $("#sign_up_form").serialize(),
         success: function(){
           console.log("success");
+        },
+        error: function(err){
+          $("#name,#email,#password").val("");
+        }
+      });
+    })
+
+    $("#sign_in_user").on("click", function(){
+      $.ajax({
+        url: "/login",
+        method: "POST",
+        data: $("#sign_in_form").serialize(),
+        success: function(){
+
+        },
+        error: function(err){
+          
         }
       })
     });
