@@ -1,4 +1,4 @@
-#Getting Started!
+# Getting Started!
 #Open the terminal and Run the following:
 ###npm init
 ###npm install hapi@13.4.1
@@ -54,7 +54,7 @@ server.route({
   }
 });
 
-#Create a Landing page in the views
+# Create a Landing page in the views
 
 <html lang="en" dir="ltr">
   <%include partials/header%>
