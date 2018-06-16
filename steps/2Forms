@@ -1,4 +1,7 @@
-
+#Database
+We need a database to store users and their
+email, password, id, friends, friend requests,
+interest and picture.
 
 #npm install mongoose
 
@@ -7,3 +10,26 @@
 ##Open another tab and Run "mongo"
 ##Type " use connect "
 ## npm install shortid
+
+## Require mongoose and shortid
+const mongoose = require("mongoose");
+const shortid = require("shortid");
+
+## Add userSchema
+var userSchema = mongoose.Schema({
+  name: {type: String},
+  email: {type: String},
+  password: {type: String},
+  member_id: {type: String, default: shordid.generate},
+  friends: [{"member_id": String, "friend_name": String, "profile_pic": String}],
+  friend_requests: [{"member_id": String, "friend_name": String, "profile_pic": String}],
+  user_profile: [userProfileSchema]
+})
+
+##Add userProfileSchema
+var userProfileSchema = mongoose.Schema({
+  location: {type: String, default: "None"},
+  description: {type: String, default: "None"},
+  interests: {type: String, default: "None"},
+  profile_pic: {type: String, default"default_profile.png"}
+})

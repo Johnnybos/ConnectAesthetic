@@ -5,6 +5,9 @@ const Hapi=require('hapi');
 // Create a server with a host and port
 const server = new Hapi.Server();
 
+const mongoose = require("mongoose");
+const User = require("./models/user_model");
+const connect = mongoose.connect("mongodb://localhost/connect");
 //Port
 server.connection({port:8080});
 
