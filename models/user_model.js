@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const shortid = require("shortid");
+const shortid  = require("shortid");
 
 var userProfileSchema = mongoose.Schema({
-  location: {type: String, default: "None"},
+  location:    {type: String, default: "None"},
   description: {type: String, default: "None"},
-  interests: {type: String, default: "None"},
+  interests:   {type: String, default: "None"},
   profile_pic: {type: String, default: "default_profile.png"}
 })
 

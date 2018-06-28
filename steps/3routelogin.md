@@ -3,6 +3,23 @@
 ```
 npm install hapi-auth-cookie
 ```
+
+Create an Ajax on homepage.ejs in scripts
+```
+$("#sign_in_user").on("click", function(){
+  $.ajax({
+    url: "/login",
+    method: "POST",
+    data: $("#sign_in_form").serialize(),
+    success: function(){
+
+    },
+    error: function(err){
+
+    }
+  })
+});
+```
 Add Sign in route
 ```
 {

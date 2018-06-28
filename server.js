@@ -1,16 +1,14 @@
 'use strict';
-
-const Hapi=require('hapi');
-
 // Create a server with a host and port
+const Hapi=require('hapi');
 const server = new Hapi.Server();
 
 const mongoose = require("mongoose");
 const User = require("./models/user_model");
-const connect = mongoose.connect("mongodb://localhost/connectdb");
+const connectdb = mongoose.connect("mongodb://localhost/connectdb");
+
 //Port
 server.connection({port:8080});
-
 
 // Start the server
 server.start(console.log("test"));
@@ -24,6 +22,7 @@ server.route({
   }
 })
 
+//REGISTER VISION
 server.register(require("vision"), function(err){
   server.views({
     engines: {
@@ -41,11 +40,28 @@ server.register(require("inert"), function(err){
 
 //Register Cookie using Hapi Auth
 server.register(require("hapi-auth-cookie"));
-server.auth.strategy("strategy", "cookie", {
-  cookie "cookie",
-  password: "CnqKELu9u4Ru*bnmpAQBzYr^P^k9t_jg",
+server.auth.strategy("cookiestrategy", "cookie", {
+  cookie: "cookie1",
+  password: "CnqKELu9u4RusbnmpAQBzYraPgkkrqjg",
   isSecure: false
-})
+});
+
+//Register Plug-in in User Folder to Server.
+server.register({
+  register: require("./routes/user")
+}, function(err){
+    if (err) {
+      return;
+  }
+});
+//Register Plug-in in Home Folder to Server.
+server.register({
+  register: require("./routes/home")
+}, function(err){
+  if(err){
+    return;
+  }
+});
 
 server.route({
   method: "GET",
@@ -54,14 +70,5 @@ server.route({
     directory: {
       path: "public"
     }
-  }
-});
-
-//Register Plug-in to Server.
-server.register({
-  register: require("./routes/user")
-}, function(err){
-  if (err) {
-    return;
   }
 });
