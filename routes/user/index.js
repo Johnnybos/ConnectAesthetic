@@ -43,6 +43,7 @@ module.exports.register = function(server, options, next){
         })
       }
     },
+      //LOGOUT ROUTE
     {
       method: "POST",
       path: "/logout",
