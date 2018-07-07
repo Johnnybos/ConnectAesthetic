@@ -15,7 +15,7 @@ const Hapi=require('hapi');
 const server = new Hapi.Server();
 
 //Port
-server.connection({port:8080});
+server.connection({port:3000});
 
 
 // Start the server

@@ -8,7 +8,7 @@ const User = require("./models/user_model");
 const connectdb = mongoose.connect("mongodb://localhost/connectdb");
 
 //Port
-server.connection({port:8080});
+server.connection({port:3000});
 
 // Start the server
 server.start(console.log("test"));
@@ -20,7 +20,7 @@ server.route({
   handler: function(request, reply){
     reply.view("landing");
   }
-})
+});
 
 //REGISTER VISION
 server.register(require("vision"), function(err){
@@ -69,6 +69,16 @@ server.route({
   handler: {
     directory: {
       path: "public"
+    }
+  }
+});
+
+server.route({
+  method: "GET",
+  path: "/user_profile_images/{param*}",
+  handler: {
+    directory: {
+      path: "user_profile_images"
     }
   }
 });
